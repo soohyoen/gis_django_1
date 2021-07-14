@@ -4,10 +4,37 @@
     </div>
 
     <div class="pragmatic_header_button">
-        <span>123</span>
-        <span>123</span>
-        <span>123</span>
-        <span>123</span>
+        <span>menu</span>
+        <span>info</span>
+
+
+        {% if not user.is_authenticated %}
+
+        <span>
+            <a href="{% url 'accountapp:login' %}">
+                login
+
+            </a>
+        </span>
+
+        <span>
+            <a href="{% url 'accountapp:create' %}">
+                SignUp
+
+            </a>
+        </span>
+
+        {% else %}
+        <span>
+
+                <a href="{% url 'accountapp:logout' %}">
+                    Logout
+
+                </a>
+        </span>
+
+        {% endif %}
+
     </div>
 
 </div>
