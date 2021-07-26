@@ -1,15 +1,26 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
 
 <div class="text-center mw-500 m-auto">
-    <div class = 'm-5'>
-        <h4>{{ target_user.username }}</h4>
-    </div>
+
     <div>
         {{ target_user.date_joined }}
     </div>
+
+    {% if target_user.profile %}
+    <h2 sytyle = "font-family: 'NanumSquareB'">
+        {{ target_user.profile.nickname }}
+    </h2>
+    {% else %}
+    <a href="{% url 'profileapp:create' %}">
+        <h2 style = "font-family: 'NanumSquareB'">
+            Create Profile
+        </h2>
+    </a>
+    {% endif %}
+
+    {% if target_user == user %}
     <div>
         <a href="{% url 'accountapp:update' pk=user.pk %}" >
             Update Info
@@ -19,6 +30,7 @@
         </a>
 
     </div>
+{% endif %}
 </div>
 
 

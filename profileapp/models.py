@@ -8,7 +8,7 @@ class Profile(models.Model):
                                 related_name='profile')
 
     image = models.ImageField(upload_to='profile/', null=True)
-    nickname = models.CharField(max_length=30, unique=True)
+    nickname = models.CharField(max_length=30, unique=True, null=True)
     message = models.CharField(max_length=200, null=True)
 
 
