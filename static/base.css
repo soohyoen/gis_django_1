@@ -1,7 +1,7 @@
 .pragmatic_header_logo{
     margin: 2rem 0;
     font-family: 'Bona Nova', serif;
-
+    line-height: 1.2;
 }
 
 .pragmatic_header_button{
@@ -20,6 +20,7 @@
 .mw-500 {
     max-width : 500px;
     margin: 1rem 1.5rem;
+    line-height: 3.5;
 }
 
 
