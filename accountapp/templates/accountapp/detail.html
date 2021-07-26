@@ -8,6 +8,9 @@
         {{ target_user.date_joined }}
     </div>
 
+    <img src="{{ target_user.profile.image.url }}" alt=""
+         style="height: 12rem; width: 12rem; width: 12rem; border-radius: 10rem; margin-bottom: 2rem; margin-top: 1rem">
+
     {% if target_user.profile %}
     <h2 sytyle = "font-family: 'NanumSquareB'">
         {{ target_user.profile.nickname }}
@@ -23,7 +26,10 @@
         </h2>
     </a>
     {% endif %}
+    <h5 style="margin-bottom: 3rem">
+        {{ target_user.profile.message }}
 
+    </h5>
     {% if target_user == user %}
     <div>
         <a href="{% url 'accountapp:update' pk=user.pk %}" >
