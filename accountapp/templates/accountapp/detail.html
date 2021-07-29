@@ -4,9 +4,6 @@
 
 <div class="text-center mw-500 m-auto">
 
-    <div>
-        {{ target_user.date_joined }}
-    </div>
 
     <img src="{{ target_user.profile.image.url }}" alt=""
          style="height: 12rem; width: 12rem; width: 12rem; border-radius: 10rem; margin-bottom: 2rem; margin-top: 1rem">
@@ -15,7 +12,8 @@
     <h2 sytyle = "font-family: 'NanumSquareB'">
         {{ target_user.profile.nickname }}
             {% if target_user.profile %}
-        <a href = "{% url 'profileapp:update' pk=target_user.profile.pk %}">
+        <a href = "{% url 'profileapp:update' pk=target_user.profile.pk %}"
+            class= 'material-icons round_button'>
             edit
         </a>
 
@@ -33,11 +31,13 @@
     </h5>
     {% if target_user == user %}
     <div>
-        <a href="{% url 'accountapp:update' pk=user.pk %}" >
-            Update Info
+        <a href="{% url 'accountapp:update' pk=target_user.pk %}"
+            class='material-icons round_button mx-1'>
+            settings
         </a>
-        <a href="{% url 'accountapp:delete' pk=user.pk %}" >
-            Quit
+        <a href="{% url 'accountapp:delete' pk=target_user.pk %}"
+            class='material-icons round_button mx-1'>
+            close
         </a>
 
     </div>
